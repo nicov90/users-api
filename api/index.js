@@ -11,7 +11,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
   res.send(`
     <p>Hola, bienvenido a mi servidor.</p>
     `);
