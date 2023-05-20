@@ -1,3 +1,5 @@
+const { v4: uuidv4 } = require('uuid');
+
 class UserService {
   constructor() {
     this.users = [
@@ -12,7 +14,7 @@ class UserService {
   }
   async createUser(data) {
     const newUser = {
-      id: crypto.randomUUID(),
+      id: uuidv4(),
       ...data,
     };
     this.users = [newUser, ...this.users];
