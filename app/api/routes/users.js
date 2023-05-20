@@ -6,7 +6,7 @@ const {
   getProductScheme,
   updateProductScheme,
   createProductScheme,
-} = require("../../../express-api/api/schemes/scheme");
+} = require("../scheme/scheme");
 const users = new UserService();
 
 router.get("/", async (req, res) => {
