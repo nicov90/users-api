@@ -5,8 +5,9 @@ class UserService {
     this.users = [
       {
         id: "1",
-        email: "admin",
-        name: "Nicolas",
+        email: "admin@mail.com",
+        username: "nicov90",
+        firstname: "Nicolas",
         lastname: "Valdez",
         password: "1234",
       },
