@@ -6,7 +6,7 @@ const username = Joi.string()
 const firstname = Joi.string().min(3).max(15);
 const lastname = Joi.string().min(3).max(15);
 const password = Joi.string().min(4).max(12);
-const favorites = Joi.object();
+const favorites = Joi.array().items(Joi.string());
 
 const createUserScheme = Joi.object({
   email: email.required(),
@@ -14,7 +14,7 @@ const createUserScheme = Joi.object({
   firstname: firstname.required(),
   lastname: lastname.required(),
   password: password.required(),
-  favorites: favorites.default({}),
+  favorites: favorites.default([]),
 });
 
 const updateUserScheme =  Joi.object({
