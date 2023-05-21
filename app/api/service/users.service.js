@@ -10,6 +10,7 @@ class UserService {
         firstname: "Nicolas",
         lastname: "Valdez",
         password: "1234",
+        favorites: {},
       },
     ];
   }
