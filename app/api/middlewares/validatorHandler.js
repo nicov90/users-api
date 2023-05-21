@@ -7,6 +7,8 @@ const validatorHandler = (schema, property) => {
     const {err}= schema.validate(data, { abortEarly: false});
     if(err){
       next(boom.badRequest(err));
+    }else{
+      next();
     }
   }
 };

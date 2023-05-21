@@ -3,9 +3,9 @@ const router = express.Router();
 const UserService = require("../service/users.service");
 const validatorHandler = require("../middlewares/validatorHandler");
 const {
-  getProductScheme,
-  updateProductScheme,
-  createProductScheme,
+  getUserScheme,
+  updateUserScheme,
+  createUserScheme,
 } = require("../scheme/scheme");
 const users = new UserService();
 
@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 
 router.get(
   "/:id",
-  validatorHandler(getProductScheme, "params"),
+  validatorHandler(getUserScheme, "params"),
   async (req, res) => {
     const { id } = req.params;
     const user = await users.getUserById(id);
@@ -29,20 +29,20 @@ router.get(
 
 router.post(
   "/",
-  validatorHandler(createProductScheme, "body"),
+  validatorHandler(createUserScheme, "body"),
   async (req, res) => {
     const body = req.body;
     console.log(body);
-    const newProduct = await users.createUser(body);
+    const newUser = await users.createUser(body);
 
-    res.status(201).json(newProduct);
+    res.status(201).json(newUser);
   }
 );
 
 router.patch(
   "/:id",
-  validatorHandler(getProductScheme, "params"),
-  validatorHandler(updateProductScheme, "body"),
+  validatorHandler(getUserScheme, "params"),
+  validatorHandler(updateUserScheme, "body"),
   async (req, res, next) => {
     try {
       const { id } = req.params;
