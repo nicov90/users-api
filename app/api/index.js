@@ -25,5 +25,5 @@ app.use(validatorHandler);
 
 app.listen(port, ()=>{
   console.log('Port: ' + port);
-  /*console.log("http://localhost:" + port + "/api");*/
+  console.log("http://localhost:" + port + "/api");
 })
